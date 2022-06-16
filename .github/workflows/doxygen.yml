@@ -18,7 +18,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v3
+    
       - name: Doxygen Action
         uses: mattnotmitt/doxygen-action@1.9.1
+
       - name: Github Pages Deploy Action
         uses: avinal/github-pages-deploy-action@v0.9
