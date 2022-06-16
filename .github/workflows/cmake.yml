@@ -29,7 +29,7 @@ jobs:
       run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
       
     - name: Install clang-format
-      run: brew install clang-format
+      run: brew install clang-format doxygen
 
     - name: Build
       # Build your program with the given configuration
@@ -52,3 +52,6 @@ jobs:
         # A file, directory or wildcard pattern that describes what to upload
         path: ${{github.workspace}}/build/app/cpp-plant-waterer
         # The desired behavior if no files are found using the provided path.
+        
+    - name: Doxygen Action
+      uses: mattnotmitt/doxygen-action@1.9.1
