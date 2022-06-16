@@ -52,13 +52,3 @@ jobs:
         # A file, directory or wildcard pattern that describes what to upload
         path: ${{github.workspace}}/build/app/cpp-plant-waterer
         # The desired behavior if no files are found using the provided path.
-        
-    - name: Doxygen Action
-      run: doxygen Doxyfile
-      
-    - name: Deploy to GitHub Pages
-      uses: JamesIves/github-pages-deploy-action@3.7.1
-      with:
-        github_token: ${{ inputs.github_token }}
-        branch: ${{ inputs.branch }}
-        folder: ${{ inputs.folder }}
