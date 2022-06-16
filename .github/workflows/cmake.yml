@@ -37,3 +37,11 @@ jobs:
       
     - name: Run clang format
       run: clang-format -n -- $(git ls-files '*.cpp' '*.h')
+      
+    - name: Download a Build Artifact
+      uses: actions/download-artifact@v3.0.0
+      with:
+        # Artifact name
+        name: Example binary
+        # Destination path
+        path: ${{github.workspace}}/build
